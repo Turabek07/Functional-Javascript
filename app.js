@@ -82,7 +82,7 @@
 
 // ============================================================================================================================= //
 // HIGHER--ORDER FUNCTIONS //  // MAP,FILTER & REDUCE //
-     // FILTER //
+// FILTER //
 // function isEven(n) {
 //      return n % 2 === 0
 // }
@@ -119,7 +119,7 @@
 // }
 
 // ======================================================= //
-    // MAP //
+// MAP //
 //  map = f(fn,array)
 //  function map(fn,array){
 //      if(length(array)) return [];
@@ -134,7 +134,7 @@
 //      return fizzed || buzzed ? fizzed + buzzed : n;
 //    }, wholes)
 
- // ====================================================== //
+// ====================================================== //
 // REDUCE //
 
 // sum = reduce(
@@ -161,3 +161,82 @@
 //      0,
 //      [7, 1, 3, 5, 6, 2, 8, 10, 0, 4, 9]
 //    )
+
+
+// =============================================================================================================================== //
+// Closure and CURRYING//
+//     When a function is defined within another function,
+// the inner function can remember things about the outer function's scope at the time 
+//it (the inner function) was defined. This "remembering",
+//      aka closure, is useful for avoiding long function signatures in the stateless functional world
+// where we need to pass in all relevant inputs as arguments.
+
+// function makeAdjectiveifier(adjective) {
+//      return function (noun) {
+//           return adjective + " " + noun;
+//      };
+// }
+// const coolify = makeAdjectiveifier('cool');
+// console.log(coolify('Go to Gym'));
+// console.log(coolify('drink'));
+
+
+// function writeMessage(message, salutation, name) {
+//      return md`<p style="padding:3em;font-family:monospace">${message}<br><br>${salutation},<br>${name}</p>`;
+//    }
+
+//    writeMessage(
+//      "You're doing amazing! Hopefully these exercises help you get a bit _closure_ to your programming goals.",
+//      "Keep _currying_ on",
+//      "Functional Pungrammer"
+//    )
+
+
+//    function signMessageFrom(name) {
+//      return (message, salutation) => writeMessage(message, salutation, name);
+//    }
+//    writeFriendlyNote = signMessageFrom("Your best bud")
+//    writeFriendlyNote("Hey pal! Party at my place tonight, bring snacks!", "See ya")
+
+   // CURRYING //
+
+//    function quote(name, year, text) {
+//      return md`<p style="font-size:smaller;padding:1em;font-family:monospace;">"${text}"<br>- ${name} (${year})</p>`;
+//    }
+//    grumpyQuotes = html`${[
+//      quote(
+//        'Guido van Rossum',
+//        2001,
+//        "Don't you hate code that's not properly indented?"
+//      ), // https://slashdot.org/story/01/04/20/1455252/guido-van-rossum-unleashed
+   
+//      quote(
+//        'Doug Crockford',
+//        2005,
+//        'There are no good texts on JavaScript programming.'
+//      ), // http://crockford.com/javascript/style1.html
+   
+//      quote(
+//        'Doug Crockford',
+//        2008,
+//        'JavaScript is an astonishing language, in the very worst sense.'
+//      ), // http://crockford.com/javascript/popular.html
+   
+//      quote(
+//        'Edsger Dijkstra',
+//        1978,
+//        'Object oriented programming is an exceptionally bad idea which could only have originated in California.'
+//      ), // https://www.quora.com/Why-did-Dijkstra-say-that-%E2%80%9CObject-oriented-programming-is-an-exceptionally-bad-idea-which-could-only-have-originated-in-California-%E2%80%9D/answer/Terry-Moore-32
+   
+//      quote(
+//        'Edsger Dijkstra',
+//        1975,
+//        'By claiming that they can contribute to software engineering, the soft scientists make themselves even more ridiculous.'
+//      ), // https://www.cs.utexas.edu/users/EWD/ewd04xx/EWD498.PDF
+   
+//      quote(
+//        'Edsger Dijkstra',
+//        1975,
+//        "Besides a mathematical inclination, an exceptionally good mastery of one's native tongue is the most vital asset of a competent programmer."
+//      ) // ibid.
+//    ]}`
