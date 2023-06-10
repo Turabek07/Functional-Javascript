@@ -240,3 +240,22 @@
 //        "Besides a mathematical inclination, an exceptionally good mastery of one's native tongue is the most vital asset of a competent programmer."
 //      ) // ibid.
 //    ]}`
+
+
+
+// =========================================================================================================================================== //
+
+     // FUNCTION COMPOSITION //
+ // Composing Functions //
+//  In functional programming we construct programs entirely out of modular pure functions,
+//   using function composition to "combine" several functions' effects to create a pipeline through which our program's data can flow.
+
+
+//  let ender = (ending) => (input) => input + ending;
+//  let adore = ender(' Rocks');
+//  let announce = ender(', yall')
+//  let exclaim = ender('!')
+
+//  let hypeUp = (x) => exclaim(announce(adore(x)))
+//  console.log(hypeUp('JS'));
+//  console.log(hypeUp('Tim'));
