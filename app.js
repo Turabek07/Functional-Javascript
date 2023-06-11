@@ -259,3 +259,36 @@
 //  let hypeUp = (x) => exclaim(announce(adore(x)))
 //  console.log(hypeUp('JS'));
 //  console.log(hypeUp('Tim'));
+
+
+//  Pipeline with reduce
+// To really stretch your brain, refactor the pipeline function above into one line,
+//  using the reduce function we encountered earlier, which has been imported below so that you can call it in this notebook.
+
+function reducePipeline(...functions) {
+   return input => reduce((acc, fn) => fn(acc), input, functions);
+ }
+
+
+ // Takes a "snake_case_string" and returns a split array of the words, e.g. ["snake", "case", "string"]
+function desnake(snake_case_string) {
+   return snake_case_string.split('_');
+ }
+
+ // Takes a "string" and returns a string with the first letter capitalized, e.g. "String"
+function capitalizeFirstLetter(string) {
+   return string.charAt(0).toUpperCase() + string.substr(1).toLowerCase();
+ }
+
+ // Takes an ["array", "of", "strings"] and returns a camelized ["array", "Of", "Strings"]
+function capitalizeAll(stringArray) {
+   return map(capitalizeFirstLetter, stringArray);
+ }
+
+ // Takes a "snake_case_string" and returns a "camelCaseString"
+function snakeToCamel(snake_case_string) {
+   const pipe = pipeline(desnake, camelize, concatenate);
+   return pipe(snake_case_string);
+ }
+
+ 
