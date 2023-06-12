@@ -313,3 +313,19 @@
 // console.log(newCities);
 
 // AVOIDING MUTATION EXERCISES
+
+// function push(element, array) {
+//    return [...array, element];
+//  }
+
+//  function update(index, value, array) {
+//    return array
+//      .slice(0, index)
+//      .concat([value])
+//      .concat(array.slice(index + 1));
+//  }
+
+//  function pop(array) {
+//    return array.slice(0, -1);
+//  }
+
