@@ -265,30 +265,51 @@
 // To really stretch your brain, refactor the pipeline function above into one line,
 //  using the reduce function we encountered earlier, which has been imported below so that you can call it in this notebook.
 
-function reducePipeline(...functions) {
-   return input => reduce((acc, fn) => fn(acc), input, functions);
- }
+// function reducePipeline(...functions) {
+//    return input => reduce((acc, fn) => fn(acc), input, functions);
+//  }
 
 
- // Takes a "snake_case_string" and returns a split array of the words, e.g. ["snake", "case", "string"]
-function desnake(snake_case_string) {
-   return snake_case_string.split('_');
- }
+//  // Takes a "snake_case_string" and returns a split array of the words, e.g. ["snake", "case", "string"]
+// function desnake(snake_case_string) {
+//    return snake_case_string.split('_');
+//  }
 
- // Takes a "string" and returns a string with the first letter capitalized, e.g. "String"
-function capitalizeFirstLetter(string) {
-   return string.charAt(0).toUpperCase() + string.substr(1).toLowerCase();
- }
+//  // Takes a "string" and returns a string with the first letter capitalized, e.g. "String"
+// function capitalizeFirstLetter(string) {
+//    return string.charAt(0).toUpperCase() + string.substr(1).toLowerCase();
+//  }
 
- // Takes an ["array", "of", "strings"] and returns a camelized ["array", "Of", "Strings"]
-function capitalizeAll(stringArray) {
-   return map(capitalizeFirstLetter, stringArray);
- }
+//  // Takes an ["array", "of", "strings"] and returns a camelized ["array", "Of", "Strings"]
+// function capitalizeAll(stringArray) {
+//    return map(capitalizeFirstLetter, stringArray);
+//  }
 
- // Takes a "snake_case_string" and returns a "camelCaseString"
-function snakeToCamel(snake_case_string) {
-   const pipe = pipeline(desnake, camelize, concatenate);
-   return pipe(snake_case_string);
- }
+//  // Takes a "snake_case_string" and returns a "camelCaseString"
+// function snakeToCamel(snake_case_string) {
+//    const pipe = pipeline(desnake, camelize, concatenate);
+//    return pipe(snake_case_string);
+//  }
 
- 
+
+
+// ===================================================================================================== //
+
+    // IMMUTABILITY //
+
+    // MUTATION (DANGEROUS)
+   //  let cities = ['Tahskent','Samarkand','Bukhara']
+   //  cities[1] = 'termiz'
+   //  console.log(cities);
+
+// NO MUTATION (NO DANGER!)
+// const oldCitites = ['Tashkent','Samarkand','Bukhara']
+// const newCities = oldCitites.map((city)=>{
+//    if(city === 'Tashkent') return 'Termiz';
+//    if(city === 'Samarkand') return 'Jizzakh';
+//    return city
+// })
+// console.log(oldCitites);
+// console.log(newCities);
+
+// AVOIDING MUTATION EXERCISES
