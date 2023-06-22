@@ -86,5 +86,18 @@
 //   }
   
 //   console.log(make_rug(3, 5, 'A'));
+
+let cart = [
+    { name: 'Apple', category: 'Fruit', quantity: 10, price: 0.5 },
+    { name: 'Orange', category: 'Fruit', quantity: 5, price: 0.8 },
+    { name: 'Broccoli', category: 'Vegetable', quantity: 2, price: 1.5 },
+    { name: 'Carrot', category: 'Vegetable', quantity: 8, price: 0.2 },
+    { name: 'Chicken', category: 'Meat', quantity: 1, price: 10 },
+  ];
+//   let cart2 = cart;
+//   console.log(cart.length,cart2.length);
+//   cart2.pop();
+//   console.log(cart.length, cart2.length);
+
   
 
